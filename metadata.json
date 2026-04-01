@@ -1,0 +1,5 @@
+{
+  "name": "高考英语真题词频统计与词性分析应用",
+  "description": "多模态高考英语词频统计工具，支持PDF/图片上传，自动词性标注与核心词汇过滤。",
+  "requestFramePermissions": []
+}

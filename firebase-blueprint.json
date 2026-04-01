@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "Task": {
+      "title": "Task",
+      "description": "A collection of analysis tasks for English exam vocabulary.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique task ID" },
+        "name": { "type": "string", "description": "Task name" },
+        "createdAt": { "type": "number", "description": "Creation timestamp" },
+        "uid": { "type": "string", "description": "User ID of the task owner" },
+        "fileCount": { "type": "number", "description": "Total files analyzed" },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "word": { "type": "string" },
+              "pos": { "type": "string" },
+              "count": { "type": "number" }
+            }
+          }
+        }
+      },
+      "required": ["id", "name", "createdAt", "uid", "fileCount", "results"]
+    }
+  },
+  "firestore": {
+    "/tasks/{taskId}": {
+      "schema": "Task",
+      "description": "Analysis tasks stored by unique ID"
+    }
+  }
+}
